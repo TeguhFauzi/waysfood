@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // create base url
 export const API = axios.create({
-  baseURL: "https://waysfood.onrender.com/api/v1",
+  baseURL: process.env.VITE_REACT_APP_BASE_URL,
 });
 
 // set Authorization Token Header

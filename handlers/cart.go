@@ -91,7 +91,7 @@ func (h *handlerCart) UpdateCart(c echo.Context) error {
 		cart.Status = request.Status
 	}
 
-	data, err := h.CartRepository.UpdateCart(cart)
+	data, _ := h.CartRepository.UpdateCart(cart)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, dto.ErrorResult{Code: http.StatusInternalServerError, Message: err.Error()})
 	}

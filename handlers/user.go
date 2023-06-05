@@ -59,7 +59,7 @@ func (h *handler) UpdateUser(c echo.Context) error {
 	cld, _ := cloudinary.NewFromParams(CLOUD_NAME, API_KEY, API_SECRET)
 
 	// Upload file to Cloudinary ...
-	resp, err := cld.Upload.Upload(ctx, dataFile, uploader.UploadParams{Folder: "Waysfood"})
+	resp, _ := cld.Upload.Upload(ctx, dataFile, uploader.UploadParams{Folder: "Waysfood"})
 	if err != nil {
 		fmt.Println(err.Error())
 	}
